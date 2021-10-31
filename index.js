@@ -25,6 +25,8 @@ function start(client) {
         await client.sendText(message.from, "Enter your query")
         client.onMessage(async message => {
           const query = message.body;
+          const data = await axios.post(`${url}/userquery`, {query});
+          await client.sendText(message.from, data.data);
         });
       }
     });
