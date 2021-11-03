@@ -4,6 +4,8 @@ const url = `http://localhost:4000/`;
 
 wa.create().then(client => start(client));
 
+// created with @openwa/wa-automate
+
 function start(client) {
   axios.get(url).then((res) => {
     const summary = res.data;
